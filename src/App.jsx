@@ -1,4 +1,8 @@
 import { DataProvider } from "./context/Context";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+
+import Links from './components/Links'
+
 
 function App() {
   return (
@@ -9,6 +13,13 @@ function App() {
           Fede Mazza
         </a>
       </div>
+
+      <Router>
+          <Routes>
+            <Route path="/" element={<Links />} />
+          </Routes>
+        </Router>
+
     </DataProvider>
   );
 }
