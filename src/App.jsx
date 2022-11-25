@@ -1,8 +1,8 @@
 import { DataProvider } from "./context/Context";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-import Links from './components/Links'
-
+import Links from "./components/Links";
+import ShowTestDetail from "./components/ShowTestDetail";
 
 function App() {
   return (
@@ -15,11 +15,11 @@ function App() {
       </div>
 
       <Router>
-          <Routes>
-            <Route path="/" element={<Links />} />
-          </Routes>
-        </Router>
-
+        <Routes>
+          <Route path="/" element={<Links />} />
+          <Route path="/:testerNumberURL" element={<ShowTestDetail />} />
+        </Routes>
+      </Router>
     </DataProvider>
   );
 }
