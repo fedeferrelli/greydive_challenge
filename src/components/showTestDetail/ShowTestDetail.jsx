@@ -37,7 +37,7 @@ function ShowTestDetail() {
   };
 
   return (
-    <div>
+    <div className="mt-4 bg-red-400 flex flex-col">
       {typeof linkVideo !== "undefined" && (
         <>
           <Client client={cliente} />
