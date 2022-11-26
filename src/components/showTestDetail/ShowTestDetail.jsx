@@ -8,6 +8,7 @@ import Client from "./Client";
 import TesterNumber from "./TesterNumber";
 import Video from "./Video";
 import Transcription from "./Transcription";
+import Tasks from "./Tasks";
 
 function ShowTestDetail() {
   const { data } = useContext(DataContext);
@@ -25,7 +26,8 @@ function ShowTestDetail() {
     setTester();
   }, []);
 
-  const { linkVideo, transcripcion, cliente, preguntas } = dataToShow;
+  const { linkVideo, transcripcion, cliente, escenario, preguntas } =
+    dataToShow;
 
   const changeText = (string) => {
     const toBeReplaced = /(\\n|<br>)/g;
@@ -41,9 +43,15 @@ function ShowTestDetail() {
           <Client client={cliente} />
           <TesterNumber testerNumber={testerNumberURL.split("-").pop()} />
           <Video linkVideo={linkVideo} />
-          <Transcription transcription={transcripcion} changeText={changeText} />
-
-          <p> {preguntas[0].texto}</p>
+          <Transcription
+            transcription={transcripcion}
+            changeText={changeText}
+          />
+          <Tasks
+            tasks={preguntas}
+            scenario={escenario}
+            changeText={changeText}
+          />
         </>
       )}
     </div>
