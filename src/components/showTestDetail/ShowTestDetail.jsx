@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom";
 
 import Client from "./Client";
 import TesterNumber from "./TesterNumber";
+import Video from "./Video";
 
 function ShowTestDetail() {
   const { data } = useContext(DataContext);
@@ -31,6 +32,7 @@ function ShowTestDetail() {
         <>
           <Client client={cliente} />
           <TesterNumber testerNumber={1} />
+          <Video linkVideo={linkVideo}/>
           <p>{linkVideo}</p>
 
           <p>{transcripcion.slice(0, 20)}</p>
