@@ -27,15 +27,21 @@ function ShowTestDetail() {
 
   const { linkVideo, transcripcion, cliente, preguntas } = dataToShow;
 
+  const changeText = (string) => {
+    const toBeReplaced = /(\\n|<br>)/g;
+    const toReplaceWith = "\n";
+
+    return string.replace(toBeReplaced, toReplaceWith);
+  };
+
   return (
     <div>
       {typeof linkVideo !== "undefined" && (
         <>
           <Client client={cliente} />
           <TesterNumber testerNumber={testerNumberURL.split("-").pop()} />
-          <Video linkVideo={linkVideo}/>
-          <Transcription transcription={transcripcion}/>
-          
+          <Video linkVideo={linkVideo} />
+          <Transcription transcription={transcripcion} changeText={changeText} />
 
           <p> {preguntas[0].texto}</p>
         </>

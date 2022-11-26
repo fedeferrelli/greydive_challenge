@@ -1,10 +1,10 @@
 import React from "react";
 
-function Transcription({ transcription }) {
+function Transcription({ transcription, changeText }) {
   return (
     <div>
       <h1>Transcripción</h1>
-      <p>{transcription}</p>
+      <p style={{'whiteSpace':'pre-line'}}>{changeText(transcription)}</p>
     </div>
   );
 }
