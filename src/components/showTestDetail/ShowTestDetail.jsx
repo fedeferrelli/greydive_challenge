@@ -7,6 +7,7 @@ import { useParams } from "react-router-dom";
 import Client from "./Client";
 import TesterNumber from "./TesterNumber";
 import Video from "./Video";
+import Transcription from "./Transcription";
 
 function ShowTestDetail() {
   const { data } = useContext(DataContext);
@@ -33,9 +34,8 @@ function ShowTestDetail() {
           <Client client={cliente} />
           <TesterNumber testerNumber={testerNumberURL.split("-").pop()} />
           <Video linkVideo={linkVideo}/>
-          <p>{linkVideo}</p>
-
-          <p>{transcripcion.slice(0, 20)}</p>
+          <Transcription transcription={transcripcion}/>
+          
 
           <p> {preguntas[0].texto}</p>
         </>
