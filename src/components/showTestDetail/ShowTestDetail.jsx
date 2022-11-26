@@ -31,7 +31,7 @@ function ShowTestDetail() {
       {typeof linkVideo !== "undefined" && (
         <>
           <Client client={cliente} />
-          <TesterNumber testerNumber={1} />
+          <TesterNumber testerNumber={testerNumberURL.split("-").pop()} />
           <Video linkVideo={linkVideo}/>
           <p>{linkVideo}</p>
 
