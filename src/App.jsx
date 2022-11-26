@@ -2,7 +2,7 @@ import { DataProvider } from "./context/Context";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import Links from "./components/Links";
-import ShowTestDetail from "./components/ShowTestDetail";
+import ShowTestDetail from "./components/showTestDetail/ShowTestDetail";
 
 function App() {
   return (

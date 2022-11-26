@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
-import { DataContext } from "../context/Context";
+import { DataContext } from "../../context/Context";
 import { useContext } from "react";
 
 import { useParams } from "react-router-dom";
+
+import Client from "./Client";
 
 function ShowTestDetail() {
   const { data } = useContext(DataContext);
@@ -14,7 +16,7 @@ function ShowTestDetail() {
   useEffect(() => {
     const setTester = () => {
       const tester = testerNumberURL.split("-");
-      const testerNumber = +tester[tester.length - 1] - 1 
+      const testerNumber = +tester[tester.length - 1] - 1;
       setDataToShow(data[testerNumber]);
     };
     setTester();
@@ -26,11 +28,10 @@ function ShowTestDetail() {
     <div>
       {typeof linkVideo !== "undefined" && (
         <>
+          <Client client={cliente} />
           <p>{linkVideo}</p>
 
           <p>{transcripcion.slice(0, 20)}</p>
-
-          <p>{cliente}</p>
 
           <p> {preguntas[0].texto}</p>
         </>
