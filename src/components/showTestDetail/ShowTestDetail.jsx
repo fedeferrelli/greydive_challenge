@@ -5,6 +5,7 @@ import { useContext } from "react";
 import { useParams } from "react-router-dom";
 
 import Client from "./Client";
+import TesterNumber from "./TesterNumber";
 
 function ShowTestDetail() {
   const { data } = useContext(DataContext);
@@ -29,6 +30,7 @@ function ShowTestDetail() {
       {typeof linkVideo !== "undefined" && (
         <>
           <Client client={cliente} />
+          <TesterNumber testerNumber={1} />
           <p>{linkVideo}</p>
 
           <p>{transcripcion.slice(0, 20)}</p>
