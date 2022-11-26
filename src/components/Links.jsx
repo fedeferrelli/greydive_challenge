@@ -7,13 +7,15 @@ function Links() {
   const { data } = useContext(DataContext);
 
   return (
-    <>
+    <ul className="mt-4 font-bold text-xl">
       {data?.map((data, i) => (
-        <li key={i}>
-          <Link to={`/tester-${i + 1}`}> Tester {i + 1}</Link>
+        <li key={i} className="mt-2" >
+          <Link className="hover:text-secondary/80 duration-300" to={`/tester-${i + 1}`}>
+            Tester {i + 1}: <span className="capitalize"> {data.cliente}</span>
+          </Link>
         </li>
       ))}
-    </>
+    </ul>
   );
 }
 
