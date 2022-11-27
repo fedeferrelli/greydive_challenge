@@ -23,8 +23,8 @@ function ShowTestDetail() {
       const testerNumber = +tester[tester.length - 1] - 1;
       setDataToShow(data[testerNumber]);
     };
-    setTester();
-  }, []);
+    typeof data !== "undefined" && setTester();
+  }, [data]);
 
   const { linkVideo, transcripcion, cliente, escenario, preguntas } =
     dataToShow;
